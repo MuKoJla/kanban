@@ -1,12 +1,8 @@
 {
   "compilerOptions": {
+    "alwaysStrict": true,
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "allowJs": true,
+    "lib": ["dom", "dom.iterable", "esnext"],
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -18,9 +14,15 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "allowJs": true,
+    "baseUrl": "src",
+    "plugins": [
+      {
+        "name": "typescript-plugin-css-modules",
+        "options": { "classnameTransform": "camelCaseOnly" }
+      }
+    ]
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src", "*.ts"]
 }

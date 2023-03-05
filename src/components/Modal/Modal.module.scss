@@ -1,0 +1,28 @@
+.container {
+  z-index: 1;
+  position: fixed;
+  width: 100vh;
+  height: 100vh;
+}
+
+.modal {
+  height: 50vh;
+  position: fixed;
+  top: 20vh;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: #a3b9d7;
+
+  .children {
+    margin: 36px;
+  }
+
+  .close {
+    margin-right: 24px;
+  }
+}

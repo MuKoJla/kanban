@@ -1,0 +1,120 @@
+{
+  "overrides": [
+    {
+      "files": ["**/?(*.)+(test).ts?(x)"],
+      "extends": [
+        "plugin:jest-dom/recommended",
+        "plugin:jest/recommended"
+      ],
+      "rules": {
+        "testing-library/no-container": "off",
+        "testing-library/no-node-access": "off",
+        "testing-library/prefer-screen-queries": "off",
+        "testing-library/no-unnecessary-act": "error"
+      }
+    },
+    {
+      "files": ["**/*.ts", "**/*.tsx"],
+      "env": {
+        "browser": true,
+        "es2021": true
+      },
+      "extends": [
+        "airbnb",
+        "airbnb-typescript",
+        "plugin:react/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        "plugin:import/recommended",
+        "plugin:prettier/recommended"
+      ],
+      "parserOptions": {
+        "ecmaFeatures": {
+          "jsx": true
+        },
+        "ecmaVersion": 12,
+        "sourceType": "module",
+        "project": ["./tsconfig.json"]
+      },
+      "plugins": [
+        "react",
+        "react-hooks",
+        "@typescript-eslint",
+        "testing-library",
+        "import",
+        "prettier"
+      ],
+      "rules": {
+      "@typescript-eslint/no-misused-promises": [
+        "error",
+        {
+          "checksVoidReturn": false
+        }
+        ],
+        "no-underscore-dangle": ["error", { "allow": ["__typename"] }],
+        "no-use-before-define": "off",
+        "arrow-body-style": "warn",
+        "no-param-reassign": [
+          "error",
+          { "props": true, "ignorePropertyModificationsFor": ["acc", "req", "res", "e", "state"] }
+        ],
+        "sort-imports": ["warn", { "ignoreDeclarationSort": true }],
+        "no-plusplus": "off",
+        "no-continue": "off",
+        "no-sparse-arrays": "off",
+        "react/destructuring-assignment": "error",
+        "react/jsx-filename-extension": ["warn", { "extensions": [".tsx"] }],
+        "react/react-in-jsx-scope": "off",
+        "react/jsx-props-no-spreading": "off",
+        "react/display-name": "off",
+        "react/prop-types": "off",
+        "react/require-default-props": "off",
+        "import/order": [
+          "warn",
+          {
+            "groups": ["builtin", "external", "internal", "parent", "sibling", "index"],
+            "newlines-between": "always"
+          }
+        ],
+        "import/no-extraneous-dependencies": "off",
+        "import/prefer-default-export": "off",
+        "import/extensions": [
+          "error",
+          "ignorePackages",
+          {
+            "ts": "never",
+            "tsx": "never"
+          }
+        ],
+        "@typescript-eslint/no-use-before-define": ["error"],
+        "@typescript-eslint/naming-convention": [
+          "error",
+          {
+            "selector": "variable",
+            "format": ["camelCase", "PascalCase", "UPPER_CASE"]
+          },
+          {
+            "selector": "function",
+            "format": ["camelCase"]
+          },
+          {
+            "selector": "typeLike",
+            "format": ["PascalCase"]
+          },
+          {
+            "selector": "property",
+            "format": ["camelCase", "PascalCase"],
+            "filter": {
+              "regex": "__typename|ext_id",
+              "match": false
+            }
+          }
+        ],
+        "@typescript-eslint/restrict-template-expressions": "off",
+        "no-void": "off",
+        "import/no-unresolved": "off",
+        "react/function-component-definition": "off",
+        "react/button-has-type": "off"
+      }
+    }
+  ]
+}
